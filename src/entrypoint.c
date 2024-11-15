@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_entrypoint.c                                    :+:      :+:    :+:   */
+/*   entrypoint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vide-sou <vide-sou@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 15:21:48 by vide-sou          #+#    #+#             */
-/*   Updated: 2024/11/15 18:07:04 by vide-sou         ###   ########.fr       */
+/*   Updated: 2024/11/15 19:08:29 by vide-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ char **ft_entrypoint(int argc, char **argv)
     while (str[index])
     {
         if (!ft_isdigit(str[index]) && str[index] != ' ')
-            ft_error();
+            ft_error_message();
         index++;
     }
     result = ft_split(str, ' ');

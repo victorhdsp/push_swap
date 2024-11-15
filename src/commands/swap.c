@@ -1,20 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vide-sou <vide-sou@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/15 15:21:51 by vide-sou          #+#    #+#             */
-/*   Updated: 2024/11/15 19:10:07 by vide-sou         ###   ########.fr       */
+/*   Created: 2024/11/15 19:02:55 by vide-sou          #+#    #+#             */
+/*   Updated: 2024/11/15 19:55:50 by vide-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "src/push_swap.h"
+#include "commands.h"
 
-int main(int argv, char **argc)
+void    ft_sa(char **stack)
 {
-    if (argv < 2)
-        ft_error_message();
-    return (push_swap(argv, argc));
+    ft_swap(stack, 0 ,1);
+    ft_sucess_message("sa");
+}
+
+void    ft_sb(char **stack)
+{
+    ft_swap(stack, 0, 1);
+    ft_sucess_message("sb");
+}
+
+void    ft_ss(char **stack_a, char **stack_b)
+{
+    ft_swap(stack_a, 0, 1);
+    ft_swap(stack_b, 0, 1);
+    ft_sucess_message("ss");
 }
