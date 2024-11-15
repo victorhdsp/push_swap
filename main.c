@@ -6,7 +6,7 @@
 /*   By: vide-sou <vide-sou@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 15:21:51 by vide-sou          #+#    #+#             */
-/*   Updated: 2024/11/15 16:11:20 by vide-sou         ###   ########.fr       */
+/*   Updated: 2024/11/15 16:57:05 by vide-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,7 @@
 
 int main(int argv, char **argc)
 {
+    if (argv < 2)
+        ft_error();
     return (push_swap(argv, argc));
 }

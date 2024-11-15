@@ -1,33 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_utils.c                                  :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vide-sou <vide-sou@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/15 15:21:48 by vide-sou          #+#    #+#             */
-/*   Updated: 2024/11/15 18:09:55 by vide-sou         ###   ########.fr       */
+/*   Created: 2024/09/24 18:28:18 by vide-sou          #+#    #+#             */
+/*   Updated: 2024/09/30 19:50:46 by vide-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-void    ft_error()
+int	ft_toupper(int c)
 {
-    write(1, "Error\n", 6);
-    exit(-1);
-}
-
-void    *ft_clear_stack(char **stack)
-{
-    size_t  index;
-
-    index = 0;
-    while (stack[index])
-    {
-        free(stack[index]);
-        index++;
-    }
-    free(stack);
-    return (NULL);
+	if (c >= 97 && c <= 122)
+		return (c - 32);
+	return (c);
 }

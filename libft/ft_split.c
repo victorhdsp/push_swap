@@ -6,7 +6,7 @@
 /*   By: vide-sou <vide-sou@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 14:47:31 by vide-sou          #+#    #+#             */
-/*   Updated: 2024/11/15 14:57:25 by vide-sou         ###   ########.fr       */
+/*   Updated: 2024/11/15 17:55:10 by vide-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static int	ft_count_word(char const *s, char c)
 		}
 		index++;
 	}
-	return (count);
+	return (count + 1);
 }
 
 static char	**ft_clean(char **result)

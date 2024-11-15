@@ -1,33 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_utils.c                                  :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vide-sou <vide-sou@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/15 15:21:48 by vide-sou          #+#    #+#             */
-/*   Updated: 2024/11/15 18:09:55 by vide-sou         ###   ########.fr       */
+/*   Created: 2024/09/17 14:01:00 by vide-sou          #+#    #+#             */
+/*   Updated: 2024/10/14 15:38:14 by vide-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-void    ft_error()
+char	*ft_strdup(const char *s)
 {
-    write(1, "Error\n", 6);
-    exit(-1);
-}
+	int		index;
+	int		length;
+	char	*result;
 
-void    *ft_clear_stack(char **stack)
-{
-    size_t  index;
-
-    index = 0;
-    while (stack[index])
-    {
-        free(stack[index]);
-        index++;
-    }
-    free(stack);
-    return (NULL);
+	index = 0;
+	length = ft_strlen(s);
+	result = (char *)ft_calloc(length + 1, sizeof(char));
+	if (result == NULL)
+		return (NULL);
+	while (s && s[index])
+	{
+		result[index] = s[index];
+		index++;
+	}
+	return (result);
 }
