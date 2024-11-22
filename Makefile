@@ -1,17 +1,16 @@
-FILES = ./src/entrypoint.o ./src/push_swap.o ./src/push_swap_utils.o ./src/messages.o ./src/commands/push.o ./src/commands/generic.o ./src/commands/roll.o ./src/commands/reverse_roll.o ./src/orders/radix.o main.o
-CC = cc
-C_FLAGS = -Wall -Werror -Wextra -g -I ./
-NAME = push_swap
-LIBFT = ./libft/libft.a
-PRINTF = ./printf/libftprintf.a
+FILES=./src/entrypoint.o ./src/push_swap.o ./src/push_swap_utils.o ./src/messages.o ./src/commands/push.o ./src/commands/generic.o ./src/commands/roll.o ./src/commands/reverse_roll.o ./src/orders/radix.o main.o
+CC=clang -Wall -Werror -Wextra -I ./ -ggdb
+NAME=push_swap
+LIBFT=./libft/libft.a
+PRINTF=./printf/libftprintf.a
 
 all: $(NAME)
 
 $(NAME): $(LIBFT) $(PRINTF) $(FILES)
-	$(CC) $(C_FLAGS) $^ -o $@ $(LIBFT) $(PRINTF)
+	$(CC) $^ -o $@ $(LIBFT) $(PRINTF)
 
 .o: .c
-	$(CC) $(C_FLAGS) -c $< -o $@
+	$(CC) -c $< -o $@
 
 clean:
 	rm -f $(FILES) && make -C ./libft clean && make -C ./printf clean
