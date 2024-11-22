@@ -1,4 +1,4 @@
-FILES = ./src/entrypoint.o ./src/push_swap.o ./src/push_swap_utils.o ./src/messages.o ./src/commands/swap.o ./src/commands/generic.o ./src/commands/roll.o ./src/commands/reverse_roll.o main.o
+FILES = ./src/entrypoint.o ./src/push_swap.o ./src/push_swap_utils.o ./src/messages.o ./src/commands/push.o ./src/commands/generic.o ./src/commands/roll.o ./src/commands/reverse_roll.o ./src/orders/radix.o main.o
 CC = cc
 C_FLAGS = -Wall -Werror -Wextra -g -I ./
 NAME = push_swap

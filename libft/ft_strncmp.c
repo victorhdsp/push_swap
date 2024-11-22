@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vide-sou <vide-sou@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/25 12:15:47 by vide-sou          #+#    #+#             */
-/*   Updated: 2024/11/22 09:47:59 by vide-sou         ###   ########.fr       */
+/*   Created: 2024/11/21 11:38:12 by vide-sou          #+#    #+#             */
+/*   Updated: 2024/11/22 09:49:46 by vide-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t nmemb, size_t size)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	void	*result;
+	size_t	index;
 
-	if (nmemb == 0 || nmemb == 0)
-		return (malloc(0));
-	if ((nmemb * size) % nmemb)
-		return (NULL);
-	result = malloc(nmemb * size);
-	if (!result)
-		return (NULL);
-	ft_memset(result, 0, nmemb * size);
-	return (result);
+	index = 0;
+	while (index < n)
+	{
+		if (s1 && s2 && (unsigned char)s1[index] != (unsigned char)s2[index])
+			return ((unsigned char)s1[index] - (unsigned char)s2[index]);
+		if (!s1 || !(unsigned char)s1[index])
+			return ((unsigned char)s2[index]);
+		if (!s2 || !(unsigned char)s2[index])
+			return ((unsigned char)s1[index]);
+		index++;
+	}
+	return (0);
 }

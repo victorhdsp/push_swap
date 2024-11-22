@@ -12,9 +12,9 @@
 
 #include "src/push_swap.h"
 
-int main(int argv, char **argc)
+int	main(int argv, char **argc)
 {
-    if (argv < 2)
-        ft_error_message();
-    return (push_swap(argv, argc));
+	if (argv < 2)
+		ft_error_message();
+	return (push_swap(argv, argc));
 }

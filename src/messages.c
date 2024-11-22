@@ -12,14 +12,14 @@
 
 #include "push_swap.h"
 
-void    ft_error_message()
+void	ft_error_message(void)
 {
-    write(1, "Error\n", 6);
-    exit(-1);
+	write(1, "Error\n", 6);
+	exit(-1);
 }
 
-void    ft_sucess_message(char *str)
+void	ft_sucess_message(char *str)
 {
-    write(1, str,  ft_strlen(str));
-    write(1, "\n", 1);
+	write(1, str, ft_strlen(str));
+	write(1, "\n", 1);
 }
