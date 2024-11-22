@@ -6,21 +6,22 @@
 /*   By: vide-sou <vide-sou@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 11:21:16 by vide-sou          #+#    #+#             */
-/*   Updated: 2024/11/22 10:01:26 by vide-sou         ###   ########.fr       */
+/*   Updated: 2024/11/22 10:10:45 by vide-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	ft_return_b_stack(char **stack_a, char **stack_b)
+int	ft_return_b_stack(char **stack_a, char **stack_b)
 {
 	if (stack_b && stack_b[0])
 	{
 		if (!stack_b[0][0])
-			break ;
+			return (1);
 		while (stack_b && stack_b[0] && stack_b[0][0])
 			ft_pb(stack_b, stack_a);
 	}
+	return (0);
 }
 
 void	ft_order_radix(char **stack_a, char **stack_b)
@@ -43,7 +44,8 @@ void	ft_order_radix(char **stack_a, char **stack_b)
 				ft_rra(stack_a);
 			}
 		}
-		ft_return_b_stack(stack_a, stack_b);
+		if (!ft_return_b_stack(stack_a, stack_b))
+			break ;
 		index++;
 	}
 }
