@@ -1,16 +1,26 @@
-# Funções (OBRIGATÓRIA)
+# Lógica
 
-[ ] `sa`: Troca os dois primeiros elementos do topo de `a`.
-[ ] `sb`: Troca os dois primeiros elementos do topo de `b`.
-[ ] `ss`: Executa `sa` e `sb` simultaneamente.
+Verificar quantos numeros estão errados.
 
-[ ] `pa`: Move o primeiro elemento do topo de `b` para o topo de `a`.
-[ ] `pb`: Move o primeiro elemento do topo de `a` para o topo de `b`.
+- Por exemplo: 
+	54321 : 5 > 4321 : 4
+	54321 : 4 > 321 : 3
+	...
+	
+	45312 : 4 > 312 : 3
+	45312 : 5 > 4312: 4
+	...
+	
+	51243: 5 > 1243: 4
+	51243: 1 >  : 0
+	...
 
-[ ] `ra`: Roda todos os elementos de `a` para cima.
-[ ] `rb`: Roda todos os elementos de `b` para cima.
-[ ] `rr`: Executa `ra` e `rb` simultaneamente.
+* Da para indexar eles verificando todos por todos
 
-[ ] `rra`: Roda todos os elementos de `a` para baixo.
-[ ] `rrb`: Roda todos os elementos de `b` para baixo.
-[ ] `rrr`: Executa `rra` e `rrb` simultaneamente.
+	51243: 5 > 1243: 4
+	51243: 1 >  : 0
+	51243: 2 > 1: 1
+	51243: 4 > 123: 3
+	51243: 3 > 12: 2
+	
+[ ] Criar uma struct onde posso guardar o valo em texto, o valor em numero e o index para facilitar as comparações.

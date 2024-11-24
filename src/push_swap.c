@@ -6,7 +6,7 @@
 /*   By: vide-sou <vide-sou@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 15:21:51 by vide-sou          #+#    #+#             */
-/*   Updated: 2024/11/24 12:45:07 by vide-sou         ###   ########.fr       */
+/*   Updated: 2024/11/24 13:13:12 by vide-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,11 @@
 
 int	push_swap(int argc, char **argv)
 {
+	char	base_stack;
 	char	**stack_a;
 	char	**stack_b;
 
-	stack_a = ft_entrypoint(argc, argv);
+	base_stack = ft_entrypoint(argc, argv);
 	stack_b = ft_create_stack_b(stack_a);
 	ft_select_sort(stack_a, stack_b);
 	//ft_order_my(stack_a, stack_b);

@@ -6,7 +6,7 @@
 /*   By: vide-sou <vide-sou@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 15:21:48 by vide-sou          #+#    #+#             */
-/*   Updated: 2024/11/24 13:09:08 by vide-sou         ###   ########.fr       */
+/*   Updated: 2024/11/24 13:13:11 by vide-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,18 +44,7 @@ void	ft_print_stack(char **stack, char *name)
 
 char	**ft_create_stack_a(char **base_stack)
 {
-	size_t	len;
-	char	**result;
-
-	len = 0;
-	while (stack_a[len])
-		len++;
-	result = ft_calloc(len + 1, sizeof(char *));
-	if (!result)
-		return (NULL);
-	while (len--)
-		result[len] = ft_strdup("");
-	return (result);
+	
 }
 
 char	**ft_create_stack_b(char **base_stack)
