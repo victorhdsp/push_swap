@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   mind.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vide-sou <vide-sou@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 15:21:53 by vide-sou          #+#    #+#             */
-/*   Updated: 2024/11/24 12:19:59 by vide-sou         ###   ########.fr       */
+/*   Updated: 2024/11/24 13:12:05 by vide-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#ifndef MIND_H
+# define MIND_H
 
-# include "../libft/libft.h"
-# include "../printf/ft_printf.h"
-# include "./commands/commands.h"
-# include "./mind/mind.h"
-# include <stdlib.h>
-# include <unistd.h>
+# include "../push_swap.h"
 
-#define MIN_NUMBER -2147483648
-#define MAX_NUMBER 2147483647
+typedef struct s_sort_map {
+    char    *string;
+    int     integer;
+    int     index;
+} t_sort_map;
 
-int		push_swap(int argv, char **argc);
-char	**ft_entrypoint(int argc, char **argv);
-void	*ft_clear_stack(char **stack);
-void	ft_error_message(void);
-void	ft_sucess_message(char *str);
-void	ft_print_stack(char **stack, char *name);
-char	**ft_create_stack_b(char **stack_a);
+/* Mind */
+void    ft_go_to_number(char **stack_a, int target);
+int		ft_get_stack_size(char **stack);
+int     ft_check_if_stack_a_is_sorted(char **stack_a);
+void    ft_select_sort(char **stack_a, char **stack_b);
+
+/* Sorts */
+void	ft_order_my(char **stack_a, char **stack_b);
+void	ft_order_radix(char **stack_a, char **stack_b);
 #endif

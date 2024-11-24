@@ -1,26 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   messages.c                                         :+:      :+:    :+:   */
+/*   ft_atol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vide-sou <vide-sou@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/15 19:02:20 by vide-sou          #+#    #+#             */
-/*   Updated: 2024/11/24 11:45:48 by vide-sou         ###   ########.fr       */
+/*   Created: 2024/09/25 11:54:49 by vide-sou          #+#    #+#             */
+/*   Updated: 2024/11/24 12:32:31 by vide-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-void	ft_error_message(void)
+long	ft_atol(const char *nptr)
 {
-	write(1, "Error", 5);
-	write(1, "\n", 1);
-	exit(-1);
-}
+	char		*nb;
+	long long	result;
+	int			minus;
 
-void	ft_sucess_message(char *str)
-{
-	write(1, str, ft_strlen(str));
-	write(1, "\n", 1);
+	nb = (char *)nptr;
+	result = 0;
+	minus = 0;
+	while (*nb == 32 || (*nb >= 9 && *nb <= 13))
+		nb++;
+	if ((*nb == '+') || (*nb == '-'))
+	{
+		if (*nb == '-')
+			minus = 1;
+		nb++;
+	}
+	while (ft_isdigit(*nb))
+		result = (result * 10) + (*nb++ - 48);
+	if (minus)
+		result *= -1;
+	return ((long)result);
 }
