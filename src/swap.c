@@ -1,32 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   reverse_roll.c                                     :+:      :+:    :+:   */
+/*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vide-sou <vide-sou@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 19:02:55 by vide-sou          #+#    #+#             */
-/*   Updated: 2024/11/22 09:56:32 by vide-sou         ###   ########.fr       */
+/*   Updated: 2024/11/28 08:38:58 by vide-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "commands.h"
 
-void	ft_rra(char **stack)
+void	ft_sa(t_stack_map **stack, int print)
 {
-	ft_reverse_roll(stack, 0);
-	ft_sucess_message("rra");
+	ft_swap(stack, 0, 1, 0);
+	if (print)
+		ft_sucess_message("sa");
 }
 
-void	ft_rrb(char **stack)
+void	ft_sb(t_stack_map **stack, int print)
 {
-	ft_reverse_roll(stack, 0);
-	ft_sucess_message("rrb");
+	ft_swap(stack, 0, 1, 0);
+	if (print)
+		ft_sucess_message("sb");
 }
 
-void	ft_rrr(char **stack_a, char **stack_b)
+void	ft_ss(t_stack_map **stack_a, t_stack_map **stack_b, int print)
 {
-	ft_reverse_roll(stack_a, 0);
-	ft_reverse_roll(stack_b, 0);
-	ft_sucess_message("rrr");
+	ft_swap(stack_a, 0, 1, 0);
+	ft_swap(stack_b, 0, 1, 0);
+	if (print)
+		ft_sucess_message("ss");
 }
