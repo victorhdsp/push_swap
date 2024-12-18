@@ -6,7 +6,7 @@
 /*   By: vide-sou <vide-sou@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 09:02:09 by vide-sou          #+#    #+#             */
-/*   Updated: 2024/12/18 08:54:03 by vide-sou         ###   ########.fr       */
+/*   Updated: 2024/12/18 09:54:52 by vide-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,11 +65,6 @@ void	ft_min_three_movs(t_stack_map **stack, int start)
 
 void	ft_min_five_movs(t_stack_map **stack_a, t_stack_map **stack_b)
 {
-	int	index;
-	int	size;
-
-	index = 0;
-	size = ft_get_stack_size(stack_a);
 	ft_go_to_number(stack_a, 0);
 	ft_pb(stack_a, stack_b, 1);
 	ft_go_to_number(stack_a, 1);

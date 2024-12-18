@@ -1,0 +1,1 @@
+[ ] - Resolver bug, se o valor começar com " ", por exemplo " -1 +1", no LLDB ele funciona normalmente mas normalmente não.

@@ -6,7 +6,7 @@
 /*   By: vide-sou <vide-sou@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 08:52:23 by vide-sou          #+#    #+#             */
-/*   Updated: 2024/12/18 09:02:16 by vide-sou         ###   ########.fr       */
+/*   Updated: 2024/12/18 09:53:16 by vide-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,11 @@
 
 static int	is_not_all_number(char *str)
 {
+	if (str[0] == '-' || str[0] == '+')
+		str++;
 	while (str && *str)
 	{
-		if (!ft_isdigit(*str) && *str != '-')
+		if (!ft_isdigit(*str))
 			return (1);
 		str++;
 	}
@@ -83,11 +85,9 @@ void	*ft_clear_input(char **input)
 
 char	**input_normalizer(int argv, char **argc)
 {
-	int		index;
 	char	*str;
 	char	**input;
 
-	index = 0;
 	if (argv < 2)
 		ft_error_message();
 	str = join_all_input(argv, argc);
