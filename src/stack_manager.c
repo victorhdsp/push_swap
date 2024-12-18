@@ -6,7 +6,7 @@
 /*   By: vide-sou <vide-sou@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 13:37:49 by vide-sou          #+#    #+#             */
-/*   Updated: 2024/12/16 09:32:12 by vide-sou         ###   ########.fr       */
+/*   Updated: 2024/12/18 08:52:34 by vide-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,13 +52,13 @@ void	enumerate_stack_list(t_stack_map **stack)
 
 	index = 0;
 	position = 0;
-	min = ft_min_number_in_stack(stack, MIN_NUMBER);
+	min = ft_get_min_number_in_stack(stack, MIN_NUMBER);
 	while (stack[index])
 	{
 		if (stack[position]->integer == min)
 		{
 			stack[position]->index = index;
-			min = ft_min_number_in_stack(stack, stack[position]->integer);
+			min = ft_get_min_number_in_stack(stack, stack[position]->integer);
 			index++;
 		}
 		position++;

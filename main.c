@@ -6,7 +6,7 @@
 /*   By: vide-sou <vide-sou@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 09:35:06 by vide-sou          #+#    #+#             */
-/*   Updated: 2024/12/16 09:35:09 by vide-sou         ###   ########.fr       */
+/*   Updated: 2024/12/18 09:03:24 by vide-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	main(int argv, char **argc)
 	t_stack_map	**stack_b;
 
 	input = input_normalizer(argv, argc);
-	size = ft_get_stack_size(input);
+	size = ft_get_numbers_size(input);
 	stack_a = create_stack_list(size, input);
 	stack_b = create_stack_list(size, NULL);
 	enumerate_stack_list(stack_a);

@@ -6,7 +6,7 @@
 /*   By: vide-sou <vide-sou@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 15:21:53 by vide-sou          #+#    #+#             */
-/*   Updated: 2024/12/16 09:34:01 by vide-sou         ###   ########.fr       */
+/*   Updated: 2024/12/18 08:50:18 by vide-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,6 @@
 # define COMMANDS_H
 
 # include "push_swap.h"
-
-typedef struct s_stack_map
-{
-	char	*string;
-	int		integer;
-	int		index;
-}			t_stack_map;
 
 /* Generic */
 int			ft_swap(t_stack_map **stack, size_t id_1, size_t id_2, int nulable);

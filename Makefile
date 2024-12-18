@@ -1,5 +1,5 @@
-FILES= main.o ./src/input_normalizer.o ./src/messages.o ./src/push_swap_utils.o ./src/push_swap_test.o ./src/stack_manager.o ./src/generic_commands.o ./src/algorithm.o ./src/push.o ./src/roll.o ./src/reverse_roll.o ./src/swap.o
-CC=clang -Wall -Wextra -I ./ -ggdb
+FILES= main.o ./src/input_normalizer.o ./src/messages.o ./src/push_swap_utils.o ./src/push_swap_utils_string.o ./src/push_swap_test.o ./src/stack_manager.o ./src/generic_commands.o ./src/algorithm.o ./src/push.o ./src/roll.o ./src/reverse_roll.o ./src/swap.o
+CC=clang -Wall -Werror -Wextra -I ./ -ggdb
 NAME=push_swap
 LIBFT=./libft/libft.a
 PRINTF=./printf/libftprintf.a

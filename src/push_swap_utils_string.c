@@ -1,22 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   algorithm.h                                        :+:      :+:    :+:   */
+/*   push_swap_utils_string.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vide-sou <vide-sou@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/15 15:21:53 by vide-sou          #+#    #+#             */
-/*   Updated: 2024/12/18 08:50:01 by vide-sou         ###   ########.fr       */
+/*   Created: 2024/11/25 08:52:23 by vide-sou          #+#    #+#             */
+/*   Updated: 2024/12/18 09:01:09 by vide-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ALGORITHM_H
-# define ALGORITHM_H
+#include "push_swap.h"
 
-# include "commands.h"
+char	*ft_join_with_space(char *s1, char *s2)
+{
+	char	*result;
+	char	*tmp;
 
-void	ft_radix(t_stack_map **stack_a, t_stack_map **stack_b);
-void	ft_min_three_movs(t_stack_map **stack, int start);
-void	ft_min_five_movs(t_stack_map **stack_a, t_stack_map **stack_b);
+	if (s1 && s2 && s1[0] && s2[0])
+	{
+		tmp = ft_strjoin(s1, " ");
+		result = ft_strjoin(tmp, s2);
+		free(tmp);
+	}
+	else
+		result = ft_strjoin(s1, s2);
+	return (result);
+}
 
-#endif
+size_t	ft_get_numbers_size(char **stack)
+{
+	size_t	index;
+
+	index = 0;
+	while (stack[index])
+		index++;
+	return (index);
+}

@@ -6,7 +6,7 @@
 /*   By: vide-sou <vide-sou@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 09:02:09 by vide-sou          #+#    #+#             */
-/*   Updated: 2024/12/16 09:33:35 by vide-sou         ###   ########.fr       */
+/*   Updated: 2024/12/18 08:54:03 by vide-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,6 @@ void	ft_radix(t_stack_map **stack_a, t_stack_map **stack_b)
 	int	range;
 	int	max;
 	int	started;
-	int	index;
 
 	range = 0;
 	max = ft_get_stack_size(stack_a);
