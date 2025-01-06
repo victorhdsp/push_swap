@@ -6,7 +6,7 @@
 /*   By: vide-sou <vide-sou@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 08:52:23 by vide-sou          #+#    #+#             */
-/*   Updated: 2024/12/18 09:53:16 by vide-sou         ###   ########.fr       */
+/*   Updated: 2025/01/06 09:16:42 by vide-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,35 @@
 
 static int	is_not_all_number(char *str)
 {
+	int		number_count;
+
+	number_count = 0;
 	if (str[0] == '-' || str[0] == '+')
 		str++;
 	while (str && *str)
 	{
 		if (!ft_isdigit(*str))
 			return (1);
+		number_count++;
 		str++;
 	}
+	if (number_count == 0)
+		return (1);
 	return (0);
 }
 
-static char	*join_all_input(int argv, char **argc)
+static char	*join_all_input(int argc, char **argv)
 {
 	int		index;
 	char	*result;
 	char	*tmp;
 
 	index = 1;
-	result = ft_strdup(argc[index]);
-	while (index + 1 < argv)
+	result = ft_strdup(argv[index]);
+	while (index + 1 < argc)
 	{
 		tmp = result;
-		result = ft_join_with_space(tmp, argc[index + 1]);
+		result = ft_join_with_space(tmp, argv[index + 1]);
 		if (tmp)
 			free(tmp);
 		index++;
@@ -83,17 +89,15 @@ void	*ft_clear_input(char **input)
 	return (NULL);
 }
 
-char	**input_normalizer(int argv, char **argc)
+char	**input_normalizer(int argc, char **argv)
 {
 	char	*str;
 	char	**input;
 
-	if (argv < 2)
-		ft_error_message();
-	str = join_all_input(argv, argc);
+	str = join_all_input(argc, argv);
 	input = ft_split(str, ' ');
 	free(str);
-	if (has_forbidden_input(input))
+	if (has_forbidden_input(input) || !input[0])
 	{
 		ft_clear_input(input);
 		ft_error_message();

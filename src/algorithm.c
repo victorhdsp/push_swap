@@ -6,7 +6,7 @@
 /*   By: vide-sou <vide-sou@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 09:02:09 by vide-sou          #+#    #+#             */
-/*   Updated: 2024/12/18 09:54:52 by vide-sou         ###   ########.fr       */
+/*   Updated: 2025/01/06 09:19:34 by vide-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,16 +65,19 @@ void	ft_min_three_movs(t_stack_map **stack, int start)
 
 void	ft_min_five_movs(t_stack_map **stack_a, t_stack_map **stack_b)
 {
-	ft_go_to_number(stack_a, 0);
-	ft_pb(stack_a, stack_b, 1);
-	ft_go_to_number(stack_a, 1);
-	ft_pb(stack_a, stack_b, 1);
-	if ((stack_b[0]->string && stack_b[1]->string)
-		&& (stack_b[0]->index < stack_b[1]->index))
-		ft_rb(stack_b, 1);
-	ft_min_three_movs(stack_a, 2);
-	while (stack_b[0] && stack_b[0]->string)
-		ft_pa(stack_b, stack_a, 1);
+	if (!ft_check_stack_sort(stack_a, 0))
+	{
+		ft_go_to_number(stack_a, 0);
+		ft_pb(stack_a, stack_b, 1);
+		ft_go_to_number(stack_a, 1);
+		ft_pb(stack_a, stack_b, 1);
+		if ((stack_b[0]->string && stack_b[1]->string)
+			&& (stack_b[0]->index < stack_b[1]->index))
+			ft_rb(stack_b, 1);
+		ft_min_three_movs(stack_a, 2);
+		while (stack_b[0] && stack_b[0]->string)
+			ft_pa(stack_b, stack_a, 1);
+	}
 }
 
 void	ft_radix(t_stack_map **stack_a, t_stack_map **stack_b)
