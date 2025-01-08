@@ -14,7 +14,7 @@
 
 static int	is_not_all_number(char *str)
 {
-	int		number_count;
+	int	number_count;
 
 	number_count = 0;
 	if (str[0] == '-' || str[0] == '+')

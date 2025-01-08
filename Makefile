@@ -43,4 +43,4 @@ r500: all
 	clear
 	./$(NAME) $(shell shuf -i 1-500 | sed -e :a  -e 'N;s/\n/ /;ta')
 	
-.PHONY: all $(NAME) $(LIBFT) $(PRINTF) clean fclean re
+.PHONY: all clean fclean re

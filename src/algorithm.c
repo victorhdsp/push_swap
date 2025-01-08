@@ -6,7 +6,7 @@
 /*   By: vide-sou <vide-sou@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 09:02:09 by vide-sou          #+#    #+#             */
-/*   Updated: 2025/01/06 09:19:34 by vide-sou         ###   ########.fr       */
+/*   Updated: 2025/01/08 08:29:22 by vide-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,9 @@ static void	ft_go_to_number(t_stack_map **stack, int target)
 	while (stack[0]->index != target)
 	{
 		if (index <= stack_size / 2)
-			ft_ra(stack, 1);
+			ft_ra(stack);
 		else
-			ft_rra(stack, 1);
+			ft_rra(stack);
 	}
 }
 
@@ -54,12 +54,12 @@ void	ft_min_three_movs(t_stack_map **stack, int start)
 	{
 		if (stack[0]->index == stack[1]->index + 1 || stack[0]->index
 			+ 1 == stack[2]->index)
-			ft_sa(stack, 1);
+			ft_sa(stack);
 		else if (stack[0]->index - 1 == stack[2]->index
 			&& stack[0]->index > stack[1]->index)
-			ft_ra(stack, 1);
+			ft_ra(stack);
 		else if (stack[0]->index - 1 == stack[2]->index)
-			ft_rra(stack, 1);
+			ft_rra(stack);
 	}
 }
 
@@ -68,15 +68,15 @@ void	ft_min_five_movs(t_stack_map **stack_a, t_stack_map **stack_b)
 	if (!ft_check_stack_sort(stack_a, 0))
 	{
 		ft_go_to_number(stack_a, 0);
-		ft_pb(stack_a, stack_b, 1);
+		ft_pb(stack_a, stack_b);
 		ft_go_to_number(stack_a, 1);
-		ft_pb(stack_a, stack_b, 1);
+		ft_pb(stack_a, stack_b);
 		if ((stack_b[0]->string && stack_b[1]->string)
 			&& (stack_b[0]->index < stack_b[1]->index))
-			ft_rb(stack_b, 1);
+			ft_rb(stack_b);
 		ft_min_three_movs(stack_a, 2);
 		while (stack_b[0] && stack_b[0]->string)
-			ft_pa(stack_b, stack_a, 1);
+			ft_pa(stack_b, stack_a);
 	}
 }
 
@@ -96,12 +96,12 @@ void	ft_radix(t_stack_map **stack_a, t_stack_map **stack_b)
 			if ((stack_a[0]->index & (1 << range)) && started == -1)
 				started = stack_a[0]->index;
 			if (!(stack_a[0]->index & (1 << range)))
-				ft_pb(stack_a, stack_b, 1);
+				ft_pb(stack_a, stack_b);
 			else
-				ft_ra(stack_a, 1);
+				ft_ra(stack_a);
 		}
 		while (stack_b[0] && stack_b[0]->string)
-			ft_pa(stack_b, stack_a, 1);
+			ft_pa(stack_b, stack_a);
 		range++;
 	}
 }
