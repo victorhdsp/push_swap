@@ -6,4 +6,5 @@ Backlog.todo
 checker_linux
 log.txt
 tester.sh
+tester_all.sh
 Push-Swap-Tester
